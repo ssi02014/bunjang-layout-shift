@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import data from "./data/db.json";
+import styled, { createGlobalStyle } from "styled-components";
+import PhotoList from "./components/PhotoList";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrap>
+      <GlobalStyle />
+      <Header />
+      <PhotoList photos={data.photos} />
+    </AppWrap>
   );
 }
+
+const AppWrap = styled.div`
+  margin: 0 auto;
+`;
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    font-size: 16px;
+    background-color: #000;
+  }
+
+  ul, li, ol {
+    list-style: none;
+  }
+
+  a, a:visited, a:active, a:hover {
+    color: initial;
+  }
+`;
 
 export default App;
