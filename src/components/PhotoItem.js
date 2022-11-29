@@ -12,7 +12,6 @@ const PhotoItem = ({ url, alt }) => {
 const ImageWrap = styled.div``;
 
 const Image = styled.img`
-  cursor: pointer;
   width: 100%;
 `;
 
