@@ -2,6 +2,7 @@ import "./App.css";
 import data from "./data/db.json";
 import styled, { createGlobalStyle } from "styled-components";
 import PhotoList from "./components/PhotoList";
+import SkeletonPhotoList from "./components/SkeletonPhotoList";
 import Header from "./components/Header";
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <AppWrap>
       <GlobalStyle />
       <Header />
-      <PhotoList photos={data.photos} />
+      {/* <PhotoList photos={data.photos} /> */}
+      <SkeletonPhotoList photos={data.photos} />
     </AppWrap>
   );
 }
