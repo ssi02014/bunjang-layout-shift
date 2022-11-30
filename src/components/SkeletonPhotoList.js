@@ -4,21 +4,25 @@ import Skeleton from "./Skeleton";
 import PhotoItem from "./PhotoItem";
 
 const SkeletonPhotoList = ({ photos }) => {
-  const [isRender, setIsRender] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
 
-  const items = isRender
-    ? photos.map((photo, i) => (
+  const photoItems = photos.map((photo, i) => (
+    <>
+      {isFetching ? (
         <PhotoItem key={i} url={photo.urls.small} alt={photo.alt} />
-      ))
-    : photos.map((photo, i) => <Skeleton />);
+      ) : (
+        <Skeleton />
+      )}
+    </>
+  ));
 
   useEffect(() => {
     setTimeout(() => {
-      setIsRender(true);
+      setIsFetching(true);
     }, 2000);
   }, []);
 
-  return <PhotoListWrap>{items}</PhotoListWrap>;
+  return <PhotoListWrap>{photoItems}</PhotoListWrap>;
 };
 
 const PhotoListWrap = styled.div`
