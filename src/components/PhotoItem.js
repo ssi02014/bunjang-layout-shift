@@ -9,10 +9,13 @@ const PhotoItem = ({ url, alt }) => {
   );
 };
 
-const ImageWrap = styled.div``;
+const ImageWrap = styled.div`
+  width: 100%;
+`;
 
 const Image = styled.img`
   width: 100%;
+  height: 100%;
 `;
 
 export default PhotoItem;
