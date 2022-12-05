@@ -10,8 +10,8 @@ function App() {
     <AppWrap>
       <GlobalStyle />
       <Header />
-      {/* <PhotoList photos={data.photos} /> */}
-      <SkeletonPhotoList photos={data.photos} />
+      <PhotoList photos={data.photos} />
+      {/* <SkeletonPhotoList photos={data.photos} /> */}
     </AppWrap>
   );
 }

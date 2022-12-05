@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const PhotoItem = ({ url, alt }) => {
   return (
-    <ImageWrap>
+    <ImageWrapper>
       <Image src={url} alt={alt} />
-    </ImageWrap>
+    </ImageWrapper>
   );
 };
 
-const ImageWrap = styled.div`
+const ImageWrapper = styled.div`
   width: 100%;
 `;
 
